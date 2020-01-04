@@ -1,0 +1,16 @@
+﻿<Window x:Class="_11122019ClassWork.WindowThree"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_11122019ClassWork"
+        mc:Ignorable="d"
+        Title="WindowThree" Height="450" Width="800">
+    <Grid>
+        <Label Content="Enter number in the range 100-999" HorizontalAlignment="Left" Margin="201,36,0,0" VerticalAlignment="Top" Width="392" FontSize="22"/>
+        <TextBox x:Name="textBoxNumber" HorizontalAlignment="Left" Height="45" Margin="261,109,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200" BorderBrush="AliceBlue" FontStyle="Normal"/>
+        <Button Content="Print description line" HorizontalAlignment="Left" Margin="261,190,0,0" VerticalAlignment="Top" Width="207" Height="35" FontSize="16" Click="Button_Click"/>
+        <Label x:Name="laberNumberWords" HorizontalAlignment="Left" Height="96" Margin="76,255,0,0" VerticalAlignment="Top" Width="607" Background="AliceBlue"/>
+        <Button Content="Next task" HorizontalAlignment="Left" Margin="668,374,0,0" VerticalAlignment="Top" Width="94" Height="35" FontSize="16" Click="Button_Click_1"/>
+    </Grid>
+</Window>

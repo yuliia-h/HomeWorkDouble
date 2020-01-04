@@ -1,0 +1,55 @@
+﻿<Window x:Class="HY_HomeWork01_WPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HY_HomeWork01_WPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="900" Width="950">
+    <Grid>
+        <Label x:Name="LabelFigure" Content="Геометрическая &#xD;&#xA;фигура:" HorizontalAlignment="Left" Height="76" Margin="10,10,0,0" VerticalAlignment="Top" Width="218" FontFamily="Segoe UI Black" FontSize="22"/>
+        <Label x:Name="LabelData" Content="Данные:" HorizontalAlignment="Left" Height="55" Margin="300,10,0,0" VerticalAlignment="Top" Width="218" FontFamily="Segoe UI Black" FontSize="22"/>
+        <Label x:Name="LabelFind" Content="Найти:" HorizontalAlignment="Left" Height="55" Margin="550,10,0,0" VerticalAlignment="Top" Width="218" FontFamily="Segoe UI Black" FontSize="22"/>
+
+        <StackPanel x:Name="stackPanel">
+            <RadioButton GroupName="Figures" IsChecked="False" x:Name="Square" Content="Квадрат" HorizontalAlignment="Left" Margin="10,105,0,0" VerticalAlignment="Top"/>
+            <RadioButton GroupName="Figures" x:Name="EquilateralTriangle" Content="Треугольник равносторонний" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <RadioButton GroupName="Figures" x:Name="RightTriangle" Content="Треугольник прямоугольный" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <RadioButton GroupName="Figures" x:Name="Cube" Content="Куб" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <RadioButton GroupName="Figures" x:Name="Circle" Content="Окружность" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+            <RadioButton GroupName="Figures" x:Name="Ring"  Content="Кольцо" HorizontalAlignment="Left" Margin="10,10,0,0 " VerticalAlignment="Top"/>
+        </StackPanel>
+        <StackPanel x:Name="stackPanelData">
+            <CheckBox x:Name="Perimeter" IsChecked="False" Content="Периметр" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,105,488,0" Width="105" />
+            <CheckBox x:Name="SquareData" IsChecked="False" Content="Площадь" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,10,488,0" Width="105" />
+            <CheckBox x:Name="CathetA" IsChecked="False" Content="Катет а" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="299.5,10,487.5,0" Width="105" />
+            <CheckBox x:Name="CathetB" IsChecked="False" Content="Катет b" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="299.5,10,487.5,0" Width="105" />
+            <CheckBox x:Name="SquareCube" IsChecked="False" Content="Площадь куба" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="299.5,10,487.5,0" Width="105" />
+            <CheckBox x:Name="VertexCoordinates" IsChecked="False" Content="Координаты вершин" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,10,452,0" Width="140" />
+            <CheckBox x:Name="Circumference" IsChecked="False" Content="Длина окружности" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,10,452,0" Width="140" />
+            <CheckBox x:Name="InnerRadius" IsChecked="False" Content="Внутренний радиус" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,10,452,0" Width="140" />
+            <CheckBox x:Name="OuterRadius" IsChecked="False" Content="Внешний радиус" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="300,10,452,0" Width="140" />
+        </StackPanel>
+        <StackPanel x:Name="stackPanelFind">
+            <CheckBox x:Name="SquarePerimeter" Content="Периметр квадрата" IsChecked="False" Margin="550, 105,200, 0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140"/>
+            <CheckBox x:Name="AreaEqTriangle" Content="Площадь равностороннего треугольника" IsChecked="False" Margin="550,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140"/>
+            <CheckBox x:Name="AreaRigTriangle" Content="Площадь прямоугольного треугольника" IsChecked="False" Margin="550,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140"/>
+            <CheckBox x:Name="PerimetrTriangle" Content="Периметр треугольника" IsChecked="False" Margin="550,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140"/>
+            <CheckBox x:Name="CubeEdge" Content="Ребро куба" IsChecked="False" Margin="550,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140"/>
+            <CheckBox x:Name="CircleRadius" Content="Радиус окружности" IsChecked="False" Margin="550,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140"/>
+            <CheckBox x:Name="RingArea" Content="Площадь кольца" IsChecked="False" Margin="550,10,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="140"/>
+        </StackPanel>
+
+        <Button x:Name="button" Content="Ввести данные:" HorizontalAlignment="Left" Height="33" Margin="274,369,0,0" VerticalAlignment="Top" Width="326" FontSize="18" Click="button_Click"/>
+        <Label x:Name="LabelRandom1" Content="Random:" Height="54" Margin="364,526,360,0" VerticalAlignment="Top" Width="218" FontFamily="Segoe UI Black" FontSize="22" Background="Transparent" HorizontalAlignment="Center"/>
+        <Label x:Name="LabelRandom2" Content="Колличество чисел:" Height="54" Margin="10,600,670,0" VerticalAlignment="Top" Width="262" FontFamily="Segoe UI Black" FontSize="22" Background="Transparent" HorizontalAlignment="Center"/>
+        <Label x:Name="LabelRandom3" Content="Диапазон:" Height="54" Margin="10,654,714,0" VerticalAlignment="Top" Width="218" FontFamily="Segoe UI Black" FontSize="22" Background="Transparent" HorizontalAlignment="Center"/>
+        <Label x:Name="LabelRandom4" Content="Точность после запятой:" Height="54" Margin="10,713,629,0" VerticalAlignment="Top" Width="303" FontFamily="Segoe UI Black" FontSize="22" Background="Transparent" HorizontalAlignment="Center"/>
+        <Button x:Name="bottonRandom" Content="Вывод:" Width="218" Height="44" Margin="318,763,406,62" Click="bottonRandom_Click"/>
+        <TextBox x:Name="textBoxRandom" TextWrapping="Wrap" Margin="0,812,0,10"/>
+        <TextBox x:Name="textBoxCount" TextWrapping="Wrap"  Margin="346,602,303,222"/>
+        <TextBox x:Name="textBoxMin" TextWrapping="Wrap" Margin="346,662,424,160"/>
+        <TextBox x:Name="textBoxMax" TextWrapping="Wrap" Margin="569,662,224,160" RenderTransformOrigin="0.141,0.564"/>
+        <TextBox x:Name="textBoxNumberComma" TextWrapping="Wrap" Margin="346,720,406,111"/>
+    </Grid>
+</Window>

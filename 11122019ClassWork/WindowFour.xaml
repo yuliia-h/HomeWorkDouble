@@ -1,0 +1,22 @@
+﻿<Window x:Class="_11122019ClassWork.WindowFour"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_11122019ClassWork"
+        mc:Ignorable="d"
+        Title="WindowFour" Height="750" Width="800">
+    <Grid>
+        <Label Content="Enter pasitive integers A, B, C " HorizontalAlignment="Left" Height="54" Margin="156,24,0,0" VerticalAlignment="Top" Width="435" FontSize="32"/>
+        <TextBox x:Name="textBoxA" HorizontalAlignment="Left" Height="47" Margin="530,99,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="217" Background="#FFF3ECE7" />
+        <TextBox x:Name="textBoxB" HorizontalAlignment="Left" Height="47" Margin="530,165,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="217" Background="#FFF3ECE7"/>
+        <TextBox x:Name="textBoxC" HorizontalAlignment="Left" Height="47" Margin="530,232,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="217" Background="#FFF3ECE7"/>
+        <Label Content="Сторона прямоугольника A:" HorizontalAlignment="Left" Height="47" Margin="41,99,0,0" VerticalAlignment="Top" Width="382" FontSize="28"/>
+        <Label Content="Сторона прямоугольника B:" HorizontalAlignment="Left" Height="47" Margin="41,165,0,0" VerticalAlignment="Top" Width="382" FontSize="28"/>
+        <Label Content="Сторона квадрата C:" HorizontalAlignment="Left" Height="47" Margin="41,232,0,0" VerticalAlignment="Top" Width="382" FontSize="28"/>
+        <Label x:Name="labelInfoCount" HorizontalAlignment="Left" Margin="118,460,0,0" VerticalAlignment="Top" Width="506" Height="145" Background="#FFF1EADE"/>
+        <Button Content="Рассчитать колличество квадратов" HorizontalAlignment="Left" Margin="118,323,0,0" VerticalAlignment="Top" Width="506" Height="62" FontSize="22" Click="Button_Click"/>
+        <Button Content="Next task" HorizontalAlignment="Left" Margin="694,670,0,0" VerticalAlignment="Top" RenderTransformOrigin="-1.343,0.617" Width="94" Height="35" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>
