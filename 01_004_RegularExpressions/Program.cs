@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace _01_006_RegularExpressions
@@ -159,10 +161,131 @@ namespace _01_006_RegularExpressions
             string[] newText5 = Regex.Split(text15, "[ ,.:;]+");
             foreach (string a in newText5)
                 Console.WriteLine(a);
-            Console.WriteLine(new string('`', 20));
-            Console.WriteLine(new string('`', 20));
+            Console.WriteLine(new string('`', 50));
+            Console.WriteLine(new string('`', 50));
+
             //*************Practicum************************************
 
+            string str = "В морозную ночь лорд Пэджет приказал 10-му гусарскому " +
+                "полку пройти через город Саагун, который был оккупирован " +
+                "французской кавалерией, в то время как он с 15-м гусарским полком " +
+                "обходил вокруг Саагуна, чтобы загнать французов в ловушку[5]. " +
+                "К сожалению, генерал John Slade опоздал с выходом 10-го полка " +
+                "(по некоторым источникам, он задержал своих гусаров длинной и " +
+                "довольно нелепой речью, закончившейся словами: «Кровь и побоище! " +
+                "Вперёд!»[6]); французская кавалерия узнала о находящейся поблизости " +
+                "британской и беспрепятственно вышла из города на восток[7]. В лучах " +
+                "рассвета французские полки, увидев 15-й гусарский полк на юге, " +
+                "выстроились в две шеренги с 1-м временным шассёрским полком (под " +
+                "командованием полковника Таше, родственника императрицы Жозефины — " +
+                "хотя он, возможно, и не присутствовал поле битвы) впереди и с 8-м " +
+                "драгунским позади них. Необычно, что французская кавалерия вместо " +
+                "сабельной атаки выдержала залп оружия британских гусар, стоя на месте," +
+                " в то время как французы сами пытались остановить неприятеля огнём из" +
+                " карабинов[8].15 - й гусарский атаковал около 400 метров по заснеженной, " +
+                "мёрзлой земле с криками «Эмсдорф и победа!» (Бой при Эмсдорфе был более " +
+                "ранним сражением, произошедшим 16 июля 1760 года, в котором 15 - й полк " +
+                "сыграл заметную роль). Было так холодно, что гусары надели свои ментики, " +
+                "вместо того, чтобы просто накинуть их на плечи, и у многих поверх ментиков " +
+                "были ещё и плащи.Свидетели также говорили о немеющих руках, едва способных " +
+                "ухватить поводья и сабли.Столкновение между гусарами и шассёрами было ужасным; " +
+                "как писал один британский офицер: «Люди и лошади были опрокинуты, и вопли ужаса, " +
+                "смешанные с проклятьями, стонами и молитвами раздавались со всех сторон»[8]. " +
+                "Британские гусары атаковали с такой скоростью, что пробились через шеренгу " +
+                "шассёров до шеренги драгунов позади.Французские войска были разбиты, и они " +
+                "устремились на восток, преследуемые англичанами. Многие французские кавалеристы " +
+                "(хотя шассёры были в основном немецкого происхождения) были взяты в плен с весьма" +
+                " небольшими жертвами со стороны 15-го гусарского полка[9]. Два французских " +
+                "подполковника были взяты в плен, а шассёрский полк, потерявший множество солдат, " +
+                "захваченных в плен, перестали существовать как боевая единица[10]. Впрочем, не все " +
+                "солдаты 15-го полка действовали одинаково успешно; сообщается, что один неуклюжий гусар" +
+                " умудрился застрелить во время погони собственную лошадь[8]. Во время погони подошёл 10-й " +
+                "гусарский полк, однако их приняли за французскую кавалерию.Из-за этого 15-й гусарский полк" +
+                " прервал преследование, чтобы перестроиться[11]. 4.1e-3; 7.9e-9 ";
+
+            //1.Определите, содержится ли в сообщении заданное слово.
+            Regex regex = new Regex("Плечи");
+            Console.WriteLine(regex.IsMatch(str));
+            Console.WriteLine(new string('`', 20));
+
+            //2.Выведите все слова заданной длины.
+            Regex regex1 = new Regex(@"\b\w{12}\b");
+            Match match = regex1.Match(str);
+            while (match.Success)
+            {
+                Console.WriteLine(match);
+                match = match.NextMatch();
+            }
+            Console.WriteLine(new string('`', 20));
+
+            //3.Выведите на экран все слова сообщения, записанные с заглавной буквы.
+            Regex regex2 = new Regex(@"\b[А-Я]\w*\b");
+            //или @"[A-Z]\S*"
+            foreach(var i in regex2.Matches(str))
+            {
+                Console.Write(i+" ");
+            }
+            Console.WriteLine();
+
+            //4.Удалите из сообщения все однобуквенные слова. 
+            string strCopy = Regex.Replace(str, @"(\b[а-я]{1}\b)|(\b[А-Я]{1}\b)", "");
+            Console.WriteLine("New text 4:\n" + strCopy);
+            Console.WriteLine();
+
+            //5.Удалите из сообщения все знаки препинания.
+            strCopy = Regex.Replace(str, @"[,.!:;?]", "");
+            Console.WriteLine("New text 5:\n" + strCopy);
+
+            //6.Удалите из сообщения все русские слова.
+            strCopy = Regex.Replace(str, @"(\b[а-я]+)|(\b[А-я]+)|(ё\w+)", "");
+            Console.WriteLine("New text 6:\n" + strCopy);
+
+            //7.Удалите из сообщения только те русские слова,которые начинаются на гласную букву.
+            Regex regex3 = new Regex(@"(\b[аоуеиэйяюы][а-я]+)|(\b[АОУЕЭЙЮЯЫ][а-я]+)|(\b[аоуеиэйяю]ё\w+)");
+            foreach (var i in regex3.Matches(str)) Console.Write(i + " ");
+            strCopy = Regex.Replace(str, @"(\b[аоуеиэйяюы][а-я]+)|(\b[АОУЕЭЙЮЯЫ][а-я]+)|(\b[аоуеиэйяю]ё\w+)", "");
+            Console.WriteLine("\nNew text 7:\n" + strCopy);
+
+            //8.Заменить все английские слова на многоточие
+            Regex regex4 = new Regex(@"([a-z]{1,})",RegexOptions.IgnoreCase);
+            foreach (var i in regex4.Matches(str)) Console.Write(i + " ");
+            strCopy = Regex.Replace(str, @"[a-z]{1,}", "...",RegexOptions.IgnoreCase);
+            Console.WriteLine("\nNew text 8:\n" + strCopy);
+
+            //9.Найти максимальное целое число, встречающееся в сообщении.
+            Console.WriteLine("\nNew text 9:\n");
+            Regex regex5 = new Regex(@"[-+]?\d+");
+            foreach (var i in regex5.Matches(str)) Console.Write(i + " ");
+            int number = 0;
+            int number2 = 0;
+            Match match1 = regex5.Match(str);
+            while (match1.Success)
+            {
+                number = int.Parse(match1.ToString());
+                if (number > number2) number2 = int.Parse(match1.ToString());
+                match1 = match1.NextMatch();
+            }
+            Console.WriteLine("\nNumber more this text = " + number2);
+
+            //10.Найти сумму всех имеющихся в тексте чисел (целых и вещественных, 
+            //причем вещественное число может быть записано в экспоненциальной форме).            
+            Console.WriteLine("\nNew text 10:\n");
+            Regex regex6 = new Regex(@"[-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?");
+            foreach (var i in regex6.Matches(str)) Console.Write(i + " ");
+            Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-us");
+            var matchec= Regex.Matches(str, @"[-+]?\d+(?:\.\d+)?(?:[eE][-+]?\d+)?");            
+            double sumDouble = 0.0;           
+            foreach (Match item in matchec)
+            {
+                sumDouble += double.Parse(item.Value);                
+            }
+            Console.WriteLine("\nSum = " + sumDouble);
+
+            //11.В сообщении могут встречаться номера телефонов, записанные в 
+            //формате xx-xx-xx, xxx-xxx или xxx-xx-xx. Вывести все номера телефонов, 
+            //которые содержатся в сообщении.
+            Console.WriteLine("\nTask 11:\n");
+            Regex regex7 = new Regex(@"(\d{2}\*\d{2}\*\d{2})|(\d{3}\*\d{3})|(\d{3}\*\d{2}\*\d{2})");
 
             Console.ReadKey();
         }
