@@ -29,6 +29,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "001_HW", "001_HW", "{CBEB46
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HW_01_04_Array_Sort_WeekDay", "HW_01_04_Array_Sort_WeekDay\HW_01_04_Array_Sort_WeekDay.csproj", "{7B788B7D-8C22-403D-B61E-4ABA9D2D7EA6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_006_RegularExpressions", "01_004_RegularExpressions\01_006_RegularExpressions.csproj", "{E196C274-B2B1-413C-A3FB-D43A37684AB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{7B788B7D-8C22-403D-B61E-4ABA9D2D7EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7B788B7D-8C22-403D-B61E-4ABA9D2D7EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7B788B7D-8C22-403D-B61E-4ABA9D2D7EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E196C274-B2B1-413C-A3FB-D43A37684AB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E196C274-B2B1-413C-A3FB-D43A37684AB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E196C274-B2B1-413C-A3FB-D43A37684AB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E196C274-B2B1-413C-A3FB-D43A37684AB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -100,6 +106,7 @@ Global
 		{BC692E8D-8D64-43CF-A6CD-7B67FD801CD6} = {CBEB469F-D456-4B20-8961-F94307D67021}
 		{F5997AC2-C750-4433-9EB9-4AB54302A5BB} = {CBEB469F-D456-4B20-8961-F94307D67021}
 		{7B788B7D-8C22-403D-B61E-4ABA9D2D7EA6} = {CBEB469F-D456-4B20-8961-F94307D67021}
+		{E196C274-B2B1-413C-A3FB-D43A37684AB9} = {CBEB469F-D456-4B20-8961-F94307D67021}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9BA51885-EB3C-44A3-984A-D36717A6B89B}
