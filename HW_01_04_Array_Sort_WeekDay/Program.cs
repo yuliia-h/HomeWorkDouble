@@ -280,14 +280,7 @@ namespace _1_04_HW_array_sorting
             }
         }
         private static void QuickSort(int[] arr, int left, int right)
-        {
-            Console.WriteLine("Array before Quick Sorting: ");
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(arr[i] + " ");
-            }
-            Console.WriteLine();
-
+        {            
             if (left < right)
             {
                 int pivot = Partition(arr, left, right);
@@ -297,13 +290,6 @@ namespace _1_04_HW_array_sorting
                 if (pivot + 1 < right)
                     QuickSort(arr, pivot + 1, right);
             }
-
-            Console.WriteLine("Array Quick Sorting: ");
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(arr[i] + " ");
-            }
-            Console.WriteLine();
         }
 
         private static int[] MergeSort(int[] array)
@@ -313,7 +299,7 @@ namespace _1_04_HW_array_sorting
 
             int middle = array.Length / 2;
             //для лаконичности используем linq    
-            return Merge(MergeSort(array.Take(middle).ToArray()), MergeSort(array.Skip(middle).ToArray()));
+            return Merge(MergeSort(array.Take(middle).ToArray()), MergeSort(array.Skip(middle).ToArray()));            
         }
 
         private static int[] Merge(int[] arr1, int[] arr2)
@@ -408,7 +394,32 @@ namespace _1_04_HW_array_sorting
 
             int[] arr4 = new int[8];
             InitializationArray(arr4);
-            //QuickSort(arr4);
+            Console.WriteLine("Array before Quick Sorting: ");
+            Show(arr4);
+            int left = 0;
+            int right = arr4.Length - 1;
+            QuickSort(arr4,left,right);
+            Console.WriteLine("Array Quick Sorting: ");
+            Show(arr4);                      
+            Console.WriteLine();
+
+            int[] arr5 = new int[8];
+            InitializationArray(arr5);
+            Console.WriteLine("Array before Merge Sorting: ");
+            Show(arr5);
+            MergeSort(arr5);
+            Console.WriteLine("Array Merge Sorting: ");
+            Show(arr5);
+            Console.WriteLine();
+
+            int[] arr6 = new int[8];
+            InitializationArray(arr6);
+            Console.WriteLine("Array before Heap Sorting: ");
+            Show(arr6);
+            MergeSort(arr6);
+            Console.WriteLine("Array Heap Sorting: ");
+            Show(arr6);
+            Console.WriteLine();
 
             Console.Write("Enter number day week: 1-7 ");
             int day = int.Parse(Console.ReadLine());
