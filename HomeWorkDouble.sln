@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_006_RegularExpressions",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01_007_HomeTask_SearchSort", "01_007_HomeTask_SearchSort\01_007_HomeTask_SearchSort.csproj", "{36989B63-E608-4C5B-90AE-58D7336CE437}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array_Shifts", "Array_Shifts\Array_Shifts.csproj", "{A28C2173-61EC-467D-8FF2-9105F9BCEB56}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -95,6 +97,10 @@ Global
 		{36989B63-E608-4C5B-90AE-58D7336CE437}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{36989B63-E608-4C5B-90AE-58D7336CE437}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{36989B63-E608-4C5B-90AE-58D7336CE437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A28C2173-61EC-467D-8FF2-9105F9BCEB56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A28C2173-61EC-467D-8FF2-9105F9BCEB56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A28C2173-61EC-467D-8FF2-9105F9BCEB56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A28C2173-61EC-467D-8FF2-9105F9BCEB56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
