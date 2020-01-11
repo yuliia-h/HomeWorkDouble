@@ -1,0 +1,103 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+}
+
+h1 {
+    font-size:150px;
+    font-weight: normal;
+    color:#ffffff;
+    text-transform:uppercase;
+    line-height: 140px;
+    margin-top: 50px;
+}
+
+h2 {
+    font-size: 72px;
+    color:#ffffff;
+
+}
+
+.banner {
+    background: url(../img/intro.jpg) no-repeat center top;
+    background-size: cover;
+    height: 800px;
+    padding-bottom: 230px;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear:both;
+}
+
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.navbar img {
+    width: 60px;
+    float: left;
+}
+
+.navbar {
+    padding-top: 20px;
+}
+
+nav{
+    float:right;
+    margin-top: 15px;
+}
+
+nav li {
+    display: inline-block;
+    margin-right: 50px;
+}
+
+nav li:last-child {
+    margin-right: 0px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    text-transform: uppercase;    
+    font-size: 14px;    
+}
+
+.navbar_titles {
+    margin: 0 auto;
+    text-align: center;
+    width:780px;
+    margin-top: 170px;
+}
+
+.navbar_titles:after {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color:#ffffff;
+    content:"";
+    margin: 0 auto;
+    margin-top:70px;
+}
+
+.nav_button {
+    margin: 0 auto;
+    text-align:center;
+    margin-top:50px;
+}
+
+.button {    
+    font-size:14px;
+    text-decoration:none;
+    color:#ffffff;
+    padding: 10px 30px;
+    border: 3px solid #ffffff;
+}
+
