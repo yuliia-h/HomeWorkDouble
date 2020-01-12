@@ -265,8 +265,8 @@ namespace _01_007_HomeTask_SearchSort
             {
                 if (i == index)
                 {
-                    Console.BackgroundColor = ConsoleColor.Red;
-                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.BackgroundColor = ConsoleColor.Gray;
+                    Console.ForegroundColor = ConsoleColor.DarkBlue;
 
                     Console.WriteLine(items[i]);
                 }
@@ -302,6 +302,7 @@ namespace _01_007_HomeTask_SearchSort
             {
                 return "";
             }
+
             Console.Clear();
             return "";
         }
