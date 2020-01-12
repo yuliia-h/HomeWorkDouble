@@ -5,6 +5,7 @@
 
 body {
     font-family: Montserrat, sans-serif;
+    height: 100%;
 }
 
 h1 {
@@ -13,17 +14,37 @@ h1 {
     color:#ffffff;
     text-transform:uppercase;
     line-height: 140px;
-    margin-top: 50px;
+    margin-top: 0px;
+    margin-left:0;
 }
 
 h2 {
     font-size: 72px;
     color:#ffffff;
+}
 
+h3 {
+    font-size: 48px;
+    color: #333333;
+    text-transform: uppercase;  
+    font-weight:normal;
+    margin-top: 15px;
+}
+
+h4 {
+    font-size: 24px;
+    color: #333333;
+    text-transform: uppercase;
+}
+
+h5 {
+    font-size: 14px;
+    color: #333333;
+    text-transform:uppercase;
 }
 
 .banner {
-    background: url(../img/intro.jpg) no-repeat center top;
+    background: url(../img/cofe.gif) no-repeat center top;
     background-size: cover;
     height: 800px;
     padding-bottom: 230px;
@@ -36,7 +57,8 @@ h2 {
 }
 
 .container {
-    width: 1200px;
+    height: 100%;
+    width: 80%;
     margin: 0 auto;
 }
 
@@ -70,6 +92,12 @@ nav a {
     font-size: 14px;    
 }
 
+nav a:hover {
+    color: #fce38a;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #fce38a;
+}
+
 .navbar_titles {
     margin: 0 auto;
     text-align: center;
@@ -99,5 +127,79 @@ nav a {
     color:#ffffff;
     padding: 10px 30px;
     border: 3px solid #ffffff;
+}
+
+.titles {
+    margin:0 auto;
+    text-align: center;
+    padding-top: 85px;
+}
+
+.titles:after {
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color:#f38181;
+    content:"";
+    margin: 0 auto;
+    margin-top:70px;
+}
+
+.aboutus p {
+    text-align: center;
+    width: 970px;
+    margin: 0 auto;
+    font-size: 15px;
+    color: #999999;
+    line-height: 24px;
+    margin-top: 45px;
+    margin-bottom: 95px;
+}
+
+.aboutus_img {
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 85px;
+}
+
+.aboutus_img img {
+    margin-right: 30px;
+    width: 380px;
+}
+
+.services {
+    background-color: #f8f8f8;
+    padding-bottom: 130px;  
+}
+
+.services_items {
+    height:100%;
+    width: 100%;
+    margin:0 auto;
+    text-align: center;    
+    margin-top: 60px;    
+}
+
+.services_item {
+    margin: 0 auto;
+    text-align: center;
+    display: inline-block;
+    margin-right:70px;
+}
+
+.services_icon {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 20px;
+}
+
+.services_titles {
+    font-size: 15px;
+    line-height: 24px;
+    color: #999999;
+    width: 280px;
+    text-align: left;
+    display: inline-block;
+    vertical-align:top;
 }
 
