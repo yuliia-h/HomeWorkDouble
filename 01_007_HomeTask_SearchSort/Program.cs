@@ -120,17 +120,226 @@ namespace _01_007_HomeTask_SearchSort
             }
         }
 
+        static void NegativElement(int[] arr)
+        {
+            int left=0, right=0;
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] < 0)
+                {
+                    left = i;
+                    break;
+                }
+            }
+
+            for (int i = arr.Length-1; i >=0; i--)
+            {
+                if (arr[i] < 0)
+                {
+                    right = i;
+                    break;
+                }
+            }
+            
+            for (int i = left+1; i < right; i++)
+            {
+                //перебираеь все элементы справа от i
+                for (int j = i + 1; j < right; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("Result: ");
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write("{0} ", arr[i]);
+            }
+            Console.WriteLine();
+        }
+
+        static void RandomFunc(int[] arr)
+        {
+            Random rnd = new Random();
+            for(int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = rnd.Next(1, 21);
+                for (int j = 0; j < i; j++)
+                {
+                    if (arr[i] == arr[j])
+                        i--;
+                }
+            }
+        }
+
+        static void RandomNumberCount(int[] arr)
+        {
+            Random rnd = new Random();
+            int number = rnd.Next(arr.Length);
+            int position = 0;
+            int count = 0;
+            for(int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == number)
+                {
+                    position = i;
+                    Console.WriteLine("Position number {0} arr[{1}]", number, i);
+                    break;
+                }
+            }
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == number)
+                {
+                    count++;
+                    
+                }
+            }
+            Console.WriteLine("Number {0} count {1}", number, count);
+
+            if (position == 0 || position == 1)
+            {
+                for (int i = position; i < arr.Length - 1; i++)
+                {
+                    //перебираеь все элементы справа от i
+                    for (int j = i + 1; j < arr.Length; j++)
+                    {
+                        if (arr[i] > arr[j])
+                        {
+                            int temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+            }
+            else if(position==arr.Length-1 || position == arr.Length - 2)
+            {
+                for (int i = position; i > 0; i--)
+                {
+                    //перебираеь все элементы справа от i
+                    for (int j = i - 1; j < position; j--)
+                    {
+                        if (arr[i] > arr[j])
+                        {
+                            int temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                for (int i = 0; i < position-1; i++)
+                {
+                    //перебираеь все элементы справа от i
+                    for (int j = i + 1; j < position; j++)
+                    {
+                        if (arr[i] < arr[j])
+                        {
+                            int temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+                for (int i = position+1; i < arr.Length - 1; i++)
+                {
+                    //перебираеь все элементы справа от i
+                    for (int j = i + 1; j < arr.Length; j++)
+                    {
+                        if (arr[i] > arr[j])
+                        {
+                            int temp = arr[i];
+                            arr[i] = arr[j];
+                            arr[j] = temp;
+                        }
+                    }
+                }
+            }            
+        }
+
+        static void CountArr(int[,] arr)
+        {
+            int sumRow = 0;
+            int sumColumn = 0;
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                sumColumn = 0;
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    sumRow += arr[i, j];
+                    sumColumn += arr[i, j];
+                    Console.Write(arr[i, j] + "  ");
+                    if (j == arr.GetLength(1) - 1) Console.Write(" | "+sumRow);
+                    if (i == arr.GetLength(0)-1 && j==arr.GetLength(1)-1)
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("-------------");
+
+                        for (i = 0; i < arr.GetLength(0); i++)
+                        {
+                            sumColumn = 0;
+                            for (j = 0; j < arr.GetLength(1); j++)
+                            {                               
+                                sumColumn += arr[j, i];
+                            }
+                            Console.Write(sumColumn+" ");
+                            
+                        }
+                    }
+                    
+
+
+                }
+                sumRow = 0;
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+
         static void Initializ(int[] arr)
         {
             Random rand = new Random();
             for (int i = 0; i < arr.Length; i++)
             {
-                arr[i] = rand.Next(-50, 50);
+                arr[i] = rand.Next(-20, 21);
             }            
         }
 
-        static void Show(int[] arr)
+        static void Initializ(int[,] arr)
+        {
+            Random rand = new Random();
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for (int j = 0; j < arr.GetLength(1); j++)
+                {
+                    arr[i, j] = rand.Next(1, 10);
+                }
+            }
+        }
+
+        static void Show(int[,] arr)
         {            
+            for(int i = 0; i < arr.GetLength(0); i++)
+            {
+                for(int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write(arr[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+
+        static void Show(int[] arr)
+        {
             for (int i = 0; i < arr.Length; i++)
             {
                 Console.Write("{0} ", arr[i]);
@@ -152,6 +361,18 @@ namespace _01_007_HomeTask_SearchSort
                 "  Необходимо найти позиции крайних отрицательных  элементов\n" +
                 " (самого левого отрицательного элемента и самого правого отрицательного элемента)\n" +
                 " и отсортировать элементы, находящиеся между ними.\n",
+                "3. Дан массив из 20 целых чисел со значениями от 1 до 20. Необходимо:\n"+
+                "■  написать функцию, разбрасывающую элементы массива произвольным образом;\n"+
+                "■  создать случайное число из того же диапазона и найти позицию(первую) этого случайного числа в массиве и сколько раз оно встречается;\n"+
+                "■  отсортировать элементы массива, находящиеся слева от найденной позиции по убыванию, а элементы массива,\n"+
+                " находящиеся справа от найденной позиции по возрастанию.",
+                "4.  Создайте двумерный массив. Заполните его случайными числами и покажите на экран.\n"+
+                "    Пользователь выбирает количество сдвигов и положение (влево, вправо, вверх, вниз).\n"+
+                "    Выполнить сдвиг массива и показать на экран полученный результат. Сдвиг циклический.",
+                "5.  В двумерном массиве целых чисел подсчитать сумму элементов: в каждой строке; в каждом столбце; одновременно по всем строкам и всем столбцам.",
+                "6.  Создайте двумерный массив. Заполните его случайными числами и покажите на экран.\n"+
+                "  Пользователь выбирает количество сдвигов и положение (влево, вправо, вверх, вниз). Выполнить сдвиг массива и показать на экран полученный результат. Сдвиг циклический.",
+
                 "Exit"
             };
             Console.CursorVisible = false;
@@ -246,9 +467,88 @@ namespace _01_007_HomeTask_SearchSort
                             " и отсортировать элементы, находящиеся между ними.\n":
                         {
                             Console.Clear();
+
+                            int[] arr1 = new int[20];
+                            Initializ(arr1);
+                            Show(arr1);
+                            NegativElement(arr1);
+
                             Console.Read();
                             break;
                         }
+
+                    case "3. Дан массив из 20 целых чисел со значениями от 1 до 20. Необходимо:\n" +
+                            "■  написать функцию, разбрасывающую элементы массива произвольным образом;\n" +
+                            "■  создать случайное число из того же диапазона и найти позицию(первую) этого случайного числа в массиве и сколько раз оно встречается;\n" +
+                            "■  отсортировать элементы массива, находящиеся слева от найденной позиции по убыванию, а элементы массива,\n" +
+                            " находящиеся справа от найденной позиции по возрастанию.":
+                        {
+                            Console.Clear();
+
+                            int[] arr1 = new int[20];
+                            for (int i = 0; i < arr1.Length; i++) arr1[i] = i+1;
+                            Show(arr1);
+                            RandomFunc(arr1);
+                            Show(arr1);
+                            RandomNumberCount(arr1);
+                            Show(arr1);
+
+                            Console.Read();
+                            break;
+                        }
+
+                    case "4.  Создайте двумерный массив. Заполните его случайными числами и покажите на экран.\n" +
+                            "    Пользователь выбирает количество сдвигов и положение (влево, вправо, вверх, вниз).\n" +
+                            "    Выполнить сдвиг массива и показать на экран полученный результат. Сдвиг циклический.":
+                        {
+                            Console.Clear();
+                            Random rnd = new Random();
+                            int[,] arr2 = new int[5, 5];
+                            Initializ(arr2);
+                            Show(arr2);
+
+                            Console.Write("Enter count shift: ");
+                            int shift = int.Parse(Console.ReadLine());
+                            Console.Write("Enter down=1, up=2, left=3, right=4 : ");
+                            int direction = int.Parse(Console.ReadLine());
+
+
+
+                            Console.Read();
+                            break;
+                        }
+
+                    case "5.  В двумерном массиве целых чисел подсчитать сумму элементов: в каждой строке; в каждом столбце; одновременно по всем строкам и всем столбцам.":
+                        {
+                            Console.Clear();
+
+                            int[,] arr = new int[3, 3];
+                            Initializ(arr);
+                            Show(arr);
+                            CountArr(arr);
+
+
+                            Console.Read();
+                            break;
+                        }
+
+                    case "6.  Создайте двумерный массив. Заполните его случайными числами и покажите на экран.\n" +
+                            "  Пользователь выбирает количество сдвигов и положение (влево, вправо, вверх, вниз). Выполнить сдвиг массива и показать на экран полученный результат. Сдвиг циклический.":
+                        {
+                            Console.Clear();
+                            int[,] vs = new int[2, 6];
+                            Initializ(vs);
+                            Show(vs);
+                            Console.Write("Enter count shift: ");
+                            int shift = int.Parse(Console.ReadLine());
+                            Console.Write("Enter down=1, up=2, left=3, right=4 : ");
+                            int direction = int.Parse(Console.ReadLine());
+
+
+                            Console.Read();
+                            break;
+                        }
+
                     case "Exit":
                         {
                             Environment.Exit(0);
